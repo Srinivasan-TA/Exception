@@ -37,7 +37,7 @@ class Card implements Cloneable{
         this.number =number;
         this.date =date;
     }
-    protected Object clone() throws CloneNotSupportedException
+    public Object clone() throws CloneNotSupportedException
     {
         return super.clone();
     }
