@@ -28,8 +28,8 @@ class Point implements Cloneable{
         }
     }
 
-
-    public Point clone() {
+    public Point clone() throws CloneNotSupportedException {
+        super.clone();
         return new Point(x, y);
     }
 }
@@ -49,7 +49,8 @@ class Basicpoint {
             Point p2 = p1.clone();
             String a =String.valueOf(p1.equalling(p2));
             l.info(a);
-            p2.display();        }
+            p2.display();
+        }
         catch(Exception e){
             l.info("error");
         }
