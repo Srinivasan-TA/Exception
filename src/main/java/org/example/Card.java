@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-class carda{
+class Carda{
 
     public static void main(String[] args)  {
         Logger l = Logger.getLogger("com.api.jar");
