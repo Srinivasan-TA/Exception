@@ -45,7 +45,8 @@ public class Shape {
             String shapeType = sc.next();
 
             for (int i = 0; i < 3; i++) {
-                l.info("Enter the " + i + "value");
+                String e = "Enter the "+ i +"value";
+                l.info(e);
                 shapeDimensions[i] = sc.nextInt();
             }
 
