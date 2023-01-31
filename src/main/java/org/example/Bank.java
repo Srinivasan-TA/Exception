@@ -1,14 +1,13 @@
 package org.example;
 
 import java.util.*;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 class BankA extends Maina {
-    Logger l = Logger.getLogger("com.api.jar");
     private String accountHolderName;
     private int accountNumber;
     private double balance;
+    Logger l = Logger.getLogger("com.api.jar");
 
     public BankA(String accountHolderName, int accountNumber, double balance) {
         this.accountHolderName = accountHolderName;
@@ -18,7 +17,6 @@ class BankA extends Maina {
 
     public void deposit(double amount) {
         balance += amount;
-        l.log(Level.INFO, () -> String.valueOf(+balance));
     }
 
     public void withdraw(double amount) {
@@ -26,20 +24,17 @@ class BankA extends Maina {
             l.info("Insufficient funds");
         } else {
             balance -= amount;
-            l.info(String.valueOf(balance));
         }
     }
 
     public double getBalance() {
         l.info(this.accountHolderName);
-        l.info(String.valueOf(this.accountNumber));
         return balance;
     }
 }
 class Maina {
     public static void main(String[] args) {
         Logger l = Logger.getLogger("com.api.jar");
-
         Scanner se = new Scanner(System.in);
         try {
             l.info("enter your name :");
@@ -49,11 +44,9 @@ class Maina {
             l.info("Type the balance :");
             int balance = se.nextInt();
 
-            Boolean loop = true;
+            BankA bWw2 = new BankA(accountHolderName, accountNumber, balance);
 
-            BankA B1 = new BankA(accountHolderName, accountNumber, balance);
-
-            while (loop == true) {
+            while (true) {
                 l.info("\n choose a option");
                 l.info("\t1.Deposit \n 2.Withdraw \n 3.Balance \n");
 
@@ -62,27 +55,28 @@ class Maina {
                     case 1: {
                         int am = se.nextInt();
                         l.info("Balance amount now is:");
-                        B1.deposit(am);
+                        bWw2.deposit(am);
                         break;
                     }
                     case 2: {
                         l.info("enter the amount:");
                         int am = se.nextInt();
 
-                        B1.withdraw(am);
+                        bWw2.withdraw(am);
                         break;
                     }
                     case 3: {
 
-                        l.info("\n the balance amount now is" + B1.getBalance());
+                        l.info("\n the balance amount now is" + bWw2.getBalance());
                         break;
                     }
                     default:
                         se.close();
+                        System.exit(0);
                 }
             }
-        }
-        catch(Exception e){
+
+        } catch (Exception e) {
             l.info("Error");
         }
     }
