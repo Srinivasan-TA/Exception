@@ -5,7 +5,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 class Carda{
-
     public static void main(String[] args)  {
         Logger l = Logger.getLogger("com.api.jar");
         Scanner sc = new Scanner(System.in);
