@@ -14,13 +14,14 @@ class Point implements Cloneable{
     }
 
     void display(){
-        l.info("value of x " + x);
-        l.info("value of y " + y);
+        String s ="value of x " + x;
+        l.info(s);
+        String r ="value of y " + y;
+        l.info(r);
     }
 
-    public boolean equals(Object obj) {
+    public boolean equalling(Object obj) {
         if (obj instanceof Point) {
-            Point other = (Point) obj;
             return x ==y;
         } else {
             return false;
@@ -38,15 +39,17 @@ class Basicpoint {
         Logger l = Logger.getLogger("com.api.jar");
         Scanner se = new Scanner(System.in);
         try {
-            l.info("enter the x co-ordinate:");
+            String s="enter the x co-ordinate:";
+            l.info(s);
             int x = se.nextInt();
-            l.info("enter the y co-ordinate:");
+            String r="enter the y co-ordinate:";
+            l.info(r);
             int y = se.nextInt();
-            Point p1 = new Point(x, y);
+            Point p1 = new Point(x,y);
             Point p2 = p1.clone();
-            l.info(String.valueOf(p1.equals(p2)));
-            p2.display();
-        }
+            String a =String.valueOf(p1.equalling(p2));
+            l.info(a);
+            p2.display();        }
         catch(Exception e){
             l.info("error");
         }
